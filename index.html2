@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff; /* Change this color to whatever you prefer */
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts Generator</h1>
+        <div id="fact-display" class="fact-display">
+            Click the button to generate a fun fact!
+        </div>
+        <button id="generate-fact-btn">Generate Another Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Netflix was founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California.",
+            "Initially, Netflix operated as a DVD rental service, where customers could rent DVDs online and have them mailed to their homes.",
+            "Netflix launched its streaming service in 2007, allowing subscribers to watch movies and TV shows instantly over the internet.",
+            "Netflix's first original series was 'House of Cards,' which premiered in 2013.",
+            "Netflix is available in over 190 countries.",
+            "Netflix has over 200 million subscribers globally.",
+            "Netflix offers a vast library of content, including thousands of movies, TV shows, documentaries, and original programming.",
+            "Netflix is credited with popularizing the binge-watching culture.",
+            "Netflix has received numerous awards for its original content.",
+            "Netflix invests billions of dollars annually in producing original content."
+        ];
+
+        document.getElementById('generate-fact-btn').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact-display').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
