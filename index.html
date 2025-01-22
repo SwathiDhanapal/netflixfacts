@@ -24,13 +24,16 @@
         }
 
         h1 {
-            color: #007bff; /* Change this color to whatever you prefer */
+            color: #007bff;
         }
 
         .fact-display {
             margin: 20px 0;
             font-size: 1.2em;
             color: #333;
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
         }
 
         button {
@@ -51,9 +54,9 @@
 <body>
     <div class="container">
         <h1>Fun Facts Generator</h1>
-        <div id="fact-display" class="fact-display">
-            Click the button to generate a fun fact!
-        </div>
+        <ul id="fact-display" class="fact-display">
+            <!-- Facts will be displayed here -->
+        </ul>
         <button id="generate-fact-btn">Generate Another Fun Fact</button>
     </div>
     <script>
@@ -72,7 +75,8 @@
 
         document.getElementById('generate-fact-btn').addEventListener('click', function() {
             const randomIndex = Math.floor(Math.random() * facts.length);
-            document.getElementById('fact-display').textContent = facts[randomIndex];
+            const factDisplay = document.getElementById('fact-display');
+            factDisplay.innerHTML = `<li>${facts[randomIndex]}</li>`;
         });
     </script>
 </body>
